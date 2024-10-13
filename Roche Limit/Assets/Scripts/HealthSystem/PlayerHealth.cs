@@ -7,8 +7,10 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 4;
     public int currentHealth;
 
-    public HealthBar healthBar;
+    private bool isDead;
 
+    public HealthBar healthBar;
+    public GameManagerScript gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +22,10 @@ public class PlayerHealth : MonoBehaviour
     {
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            // Place lose screen here
-
+            isDead = true;
+            gameManager.gameOver();
             Destroy(gameObject);
         }
 
