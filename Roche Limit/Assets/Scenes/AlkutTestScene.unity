@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1517904233}
   - component: {fileID: 1517904232}
   m_Layer: 5
-  m_Name: HelthBarBorder
+  m_Name: HealthBarBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 1669711394}
   - component: {fileID: 1669711393}
   m_Layer: 5
-  m_Name: HelthBar
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
