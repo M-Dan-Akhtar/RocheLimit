@@ -5,16 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 06d170eddffec414684e845cff10ae10
+  - enabled: 1
+    path: Assets/Scenes/SelectLevelScreen.unity
+    guid: 65c6c304b1702404a85f6f33ea3932ec
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 1f7b858035b30c04694a0f7c2327b429
   - enabled: 1
     path: Assets/Scenes/MoTestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/SampleWinScreen.unity
-    guid: 1f7b858035b30c04694a0f7c2327b429
-  - enabled: 1
     path: Assets/Scenes/SterlingTestScene.unity
     guid: d4e9630b912f0bc41b8b88c463103659
+  - enabled: 1
+    path: Assets/Scenes/SterlingTestScene2.unity
+    guid: e7fd358b9655fac43b40e4d755bb26d1
   m_configObjects: {}
