@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
    
     [SerializeField]private float speed;
+    [SerializeField]private float jumpSpeed;
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
+    
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
@@ -25,12 +27,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
-        float horizontalInput = Input.GetAxis("Horizontal");
-
+      if (isDashing)
+      {
+          return;
+      }
+      float horizontalInput = Input.GetAxis("Horizontal");
+    
       body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
       // Flips player image when moving left or right
@@ -64,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-      body.velocity = new Vector2(body.velocity.x, speed);
+      body.velocity = new Vector2(body.velocity.x, jumpSpeed);
       grounded = false;
       anim.SetTrigger("jump");
     }
