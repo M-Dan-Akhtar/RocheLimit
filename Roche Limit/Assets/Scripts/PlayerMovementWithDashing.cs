@@ -11,6 +11,8 @@ public class PlayerMovementWithDashing : MonoBehaviour
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    private float dashDirV = 0f;
+    
 
     [SerializeField] private TrailRenderer tr;
 
@@ -37,7 +39,22 @@ public class PlayerMovementWithDashing : MonoBehaviour
         Jump();
       }
 
-      if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKey(KeyCode.W))
+        {
+            dashDirV = 1;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            dashDirV = -1;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        {
+            dashDirV = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
       {
            StartCoroutine(Dash());
       }
@@ -71,10 +88,11 @@ public class PlayerMovementWithDashing : MonoBehaviour
         body.gravityScale = 0f;
 
         // Check the horizontal input to determine dash direction
-        float dashDirection = Input.GetAxisRaw("Horizontal");
-        if (dashDirection == 0) dashDirection = transform.localScale.x; // Use the character's current facing direction as a fallback
+        float dashDirectionH = Input.GetAxisRaw("Horizontal");
+        if (dashDirectionH == 0) dashDirectionH = transform.localScale.x; // Use the character's current facing direction as a fallback
 
-        body.velocity = new Vector2(dashDirection * dashingPower, 0f);
+
+        body.velocity = new Vector2(dashDirectionH * dashingPower, dashDirV * dashingPower);
 
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);

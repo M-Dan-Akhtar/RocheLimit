@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    private float dashDirV = 0f;
     [SerializeField] private TrailRenderer tr;
     private void Awake()
     {
@@ -53,6 +54,24 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            dashDirV = 1;
+            print("W Pressed, dir UP");
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            dashDirV = -1;
+            print("S Pressed, dir DOWN");
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        {
+            dashDirV = 0;
+            print("vertical direction 0, will go straight");
+        }
+
         // Change running animation
         anim.SetBool("run",horizontalInput != 0);
       anim.SetBool("grounded",grounded);
@@ -74,8 +93,19 @@ public class PlayerMovement : MonoBehaviour
       if(collision.gameObject.tag == "Ground")
       {
         grounded = true;
+            canDash = true;
       }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+            canDash = true;
+        }
+    }
+
 
     private IEnumerator Dash()
     {
@@ -85,10 +115,19 @@ public class PlayerMovement : MonoBehaviour
         body.gravityScale = 0f;
 
         // Check the horizontal input to determine dash direction
-        float dashDirection = Input.GetAxisRaw("Horizontal");
-        if (dashDirection == 0) dashDirection = transform.localScale.x; // Use the character's current facing direction as a fallback
+        float dashDirH = Input.GetAxisRaw("Horizontal");
+        if (dashDirH == 0 && dashDirV == 0) dashDirH = transform.localScale.x; // Use the character's current facing direction as a fallback
 
-        body.velocity = new Vector2(dashDirection * dashingPower, 0f);
+        if(dashDirV != 0 && dashDirH != 0)
+        {
+            body.velocity = new Vector2(dashDirH * (dashingPower / 2), dashDirV * (dashingPower / 3));
+        }
+        else
+        {
+            body.velocity = new Vector2(dashDirH * dashingPower, dashDirV * (dashingPower / 3));
+        }
+
+        
 
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
@@ -96,7 +135,5 @@ public class PlayerMovement : MonoBehaviour
         tr.emitting = false;
         body.gravityScale = originalGravity;
         isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
     }
 }
