@@ -470,8 +470,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 487766726}
-        m_TargetAssemblyTypeName: LevelChangev1, Assembly-CSharp
-        m_MethodName: changeScene
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: SelectScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1589,7 +1589,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1541456159}
         m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
-        m_MethodName: changeScene
+        m_MethodName: SelectScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 5
 --- !u!222 &1926117723
 CanvasRenderer:
   m_ObjectHideFlags: 0
