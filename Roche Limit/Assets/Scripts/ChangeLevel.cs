@@ -9,11 +9,6 @@ public class ChangeLevel : MonoBehaviour
 {
     public string insertedLevelName;
    public static string finishedLevel; //using this for scene switching (saves the name of the completed level)
-
-    
-    
-    
-    //public Button [] lvlButtons;
     
     void OnTriggerEnter2D(Collider2D winFlag)
     {
