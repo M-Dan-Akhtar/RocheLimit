@@ -3,30 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeLevel : MonoBehaviour
 {
     public string insertedLevelName;
-    private static string previousLevel; //using this for scene switching (saves the name of previous scene)
- 
+   public static string finishedLevel; //using this for scene switching (saves the name of the completed level)
+
+    
+    
+    
+    //public Button [] lvlButtons;
+    
     void OnTriggerEnter2D(Collider2D winFlag)
     {
         if (winFlag.CompareTag("Player"))
         {
-            string currentLevel= SceneManager.GetActiveScene().name;
-            previousLevel = currentLevel;// holds the name of the level you just played            
-            Debug.Log(previousLevel);
+            
+           finishedLevel = SceneManager.GetActiveScene().name;
+           // holds the name of the level you just beat          
+            Debug.Log(finishedLevel);
+            SaveSystem.SaveGame();
             SceneManager.LoadScene("WinScreen");
             
         }
     }
        public void NextScene(){
-        if(previousLevel.Equals("SterlingTestScene")){
+        if(finishedLevel.Equals("SterlingTestScene")){
             Debug.Log("Previous level was SterlingTestScene aka Level 1. So, loading level 2 aka SterlingTestScene2");
+            //lvlButtons[1].interactable = true;
             SceneManager.LoadScene("SterlingTestScene2");
         }
         else{
-         Debug.Log("Scene name was empty");
+         Debug.Log("ERROR:");
         SceneManager.LoadScene(0);
         //switch to end of game screen I think eventually
         }
@@ -37,26 +46,9 @@ public class ChangeLevel : MonoBehaviour
     public void SelectScene(){
         SceneManager.LoadScene(insertedLevelName);
     }
-       public void changeScene(){
-       Debug.Log("Previous Level: " + previousLevel);
-       //if level name is null?
-       Debug.Log("Inserted Level Name: " + insertedLevelName);
-       if(insertedLevelName == "")
-       {
-        if(previousLevel.Equals("SterlingTestScene")){
-            Debug.Log("Previous level was SterlingTestScene aka Level 1. So, loading level 2 aka SterlingTestScene2");
-            SceneManager.LoadScene("SterlingTestScene2");
-        }
-        else{
-         Debug.Log("Scene name was empty");
-        SceneManager.LoadScene(0);
-        //switch to end of game screen I think eventually
-        }
-       
-       }
-       else{
-        SceneManager.LoadScene(insertedLevelName);
-       }
-       
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteKey("level");
+        SceneManager.LoadScene("SterlingTestScene");
     }
 }
