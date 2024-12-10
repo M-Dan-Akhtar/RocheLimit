@@ -48,6 +48,6 @@ public class ChangeLevel : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.DeleteKey("level");
-        SceneManager.LoadScene("SterlingTestScene");
+        SceneManager.LoadScene("Level1");
     }
 }
