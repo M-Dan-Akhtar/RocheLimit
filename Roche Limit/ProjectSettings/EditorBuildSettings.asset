@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MoTestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b8a696cb234f18340b4222fe5fa7377a
   - enabled: 1
     path: Assets/Scenes/AlkutTestScene.unity
     guid: 71778804b271b02438c258fa6cc7c147
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SpriteCheckScene.unity
     guid: b885d202af091c442be45c70aef4833c
+  - enabled: 0
+    path: Assets/Scenes/TestHeathSystemScene 1.unity
+    guid: 625f215d171050b40b1c406b97bb21fd
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 723fd61fb856d184f876daf5ee07304f
   m_configObjects: {}

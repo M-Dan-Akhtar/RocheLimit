@@ -7,8 +7,9 @@ public class GameOverScreen : MonoBehaviour
 {
     public void RestartButton()
     {
+
         // Change the scene name based on your scene
-        // SceneManager.LoadScene("AlkutTestScene");
+        // make sure to add your scene to build settings (File > Build Settings)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

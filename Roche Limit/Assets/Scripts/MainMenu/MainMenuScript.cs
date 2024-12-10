@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void StartButton()
     {
+        // change this to your scene
         SceneManager.LoadScene("AlkutTestScene");
     }
     public void QuitButton()

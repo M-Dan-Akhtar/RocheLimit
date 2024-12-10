@@ -593,6 +593,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1172616714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4826925935792844484, guid: a02625d5c4aae6b44a17530e5e521761, type: 3}
+  m_PrefabInstance: {fileID: 67053711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1211412180 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2039891443135449364, guid: cc1a13af29a999c48b844a1e5233fe1c, type: 3}
@@ -731,6 +736,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2039891443135449364, guid: cc1a13af29a999c48b844a1e5233fe1c, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1172616714}
     - target: {fileID: 7494581278281008453, guid: cc1a13af29a999c48b844a1e5233fe1c, type: 3}
       propertyPath: m_Name
       value: GameManager

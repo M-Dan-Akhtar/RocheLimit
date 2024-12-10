@@ -18,6 +18,7 @@ public class PlayerMovementWithDashing : MonoBehaviour
     private Rigidbody2D body;
     private bool grounded;
 
+
     private void Awake()
     {
       body = GetComponent<Rigidbody2D> ();
