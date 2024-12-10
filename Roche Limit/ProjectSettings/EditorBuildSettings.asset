@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: a3631aaba5cb4a44ba955bb4e92103e0
+  - enabled: 1
+    path: Assets/Scenes/SelectLevelScreen.unity
+    guid: 65c6c304b1702404a85f6f33ea3932ec
   m_configObjects: {}

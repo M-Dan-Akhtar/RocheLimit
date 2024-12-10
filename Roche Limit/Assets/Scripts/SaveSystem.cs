@@ -18,19 +18,28 @@ public class SaveSystem : MonoBehaviour
          finishedLevel = ChangeLevel.finishedLevel;
         }
        
+        // if(finishedLevel.Equals("")){
+        //     savedLevel = "SterlingTestScene";
+        // }
+        // else (finishedLevel.Equals("SterlingTestScene")){
+        //     savedLevel = "SterlingTestScene2";
+        // }
         if(finishedLevel.Equals("")){
-            savedLevel = "SterlingTestScene";
+            savedLevel = "Level1";
         }
-        else if(finishedLevel.Equals("SterlingTestScene")){
-            savedLevel = "SterlingTestScene2";
+        else if(finishedLevel.Equals("Level1")){
+            savedLevel = "Level2";
         }
-        else
+         else if(finishedLevel.Equals("Level2")){
+            savedLevel = "Level3";
+        }
+        else //finishedLevel = Level3
         {
-
+            savedLevel = "Level4";
         }
 
         PlayerPrefs.SetString("level",savedLevel);
-       Debug.Log("Saved Level: "+ savedLevel);
+        Debug.Log("Saved Level: "+ savedLevel);
     }
     public void LoadData()
     {
