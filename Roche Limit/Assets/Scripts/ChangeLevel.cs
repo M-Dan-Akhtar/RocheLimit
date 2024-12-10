@@ -10,31 +10,35 @@ public class ChangeLevel : MonoBehaviour
     public string insertedLevelName;
    public static string finishedLevel; //using this for scene switching (saves the name of the completed level)
     
-    void OnTriggerEnter2D(Collider2D winFlag)
-    {
-        if (winFlag.CompareTag("Player"))
-        {
+    // void OnTriggerEnter2D(Collider2D winFlag)
+    // {
+    //     if (winFlag.CompareTag("Player"))
+    //     {
             
-           finishedLevel = SceneManager.GetActiveScene().name;
-           // holds the name of the level you just beat          
-            Debug.Log(finishedLevel);
-            SaveSystem.SaveGame();
-            SceneManager.LoadScene("WinScreen");
+    //        finishedLevel = SceneManager.GetActiveScene().name;
+    //        // holds the name of the level you just beat          
+    //         Debug.Log(finishedLevel);
+    //         SaveSystem.SaveGame();
+    //         SceneManager.LoadScene("WinScreen");
             
-        }
-    }
+    //     }
+    // }
        public void NextScene(){
-        if(finishedLevel.Equals("SterlingTestScene")){
-            Debug.Log("Previous level was SterlingTestScene aka Level 1. So, loading level 2 aka SterlingTestScene2");
+        if(finishedLevel.Equals("Level1")){
+            Debug.Log("Previously completed level was Level 1. So, loading level 2");
             //lvlButtons[1].interactable = true;
-            SceneManager.LoadScene("SterlingTestScene2");
+            SceneManager.LoadScene("Level2");
         }
-        else{
-         Debug.Log("ERROR:");
-        SceneManager.LoadScene(0);
-        //switch to end of game screen I think eventually
+            if(finishedLevel.Equals("Level2")){
+            Debug.Log("Previously completed level was Level 2. So, loading level 3");
+            //lvlButtons[1].interactable = true;
+            SceneManager.LoadScene("Level3");
         }
-       
+            if(finishedLevel.Equals("Level3")){
+            Debug.Log("Previously completed level was Level 3. So, loading level 4");
+            //lvlButtons[1].interactable = true;
+            SceneManager.LoadScene("Level4");
+        }
        }
     // Start is called before the first frame update
 
