@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 602842218}
   - component: {fileID: 602842217}
   - component: {fileID: 602842216}
+  - component: {fileID: 602842219}
   m_Layer: 0
   m_Name: New Game Button
   m_TagString: Untagged
@@ -272,7 +273,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602842217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 602842219}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &602842217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +324,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602842214}
   m_CullTransparentMesh: 1
+--- !u!114 &602842219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602842214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828febb6dad7c584d81809f4dcb6b854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertedLevelName: SterlingTestScene
 --- !u!1 &1124408320
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,8 +705,9 @@ GameObject:
   - component: {fileID: 2124174460}
   - component: {fileID: 2124174459}
   - component: {fileID: 2124174458}
+  - component: {fileID: 2124174461}
   m_Layer: 0
-  m_Name: Button (Legacy)
+  m_Name: Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,7 +776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2124174459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124174461}
+        m_TargetAssemblyTypeName: Continue_Game, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2124174459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +827,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124174456}
   m_CullTransparentMesh: 1
+--- !u!114 &2124174461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124174456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04c0d028c8dca24d907581dd3904d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 2124174458}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
