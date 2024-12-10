@@ -5,27 +5,19 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    [SerializeField]private float speed;
-    private float currentPosX;
-    private Vector3 velocity = Vector3.zero;
-
+    private Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+      playerTransform = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, 
-          new Vector3(currentPosX, transform.position.y, transform.position.z), 
-          ref velocity, speed);
+        Vector3 pos = new Vector3(playerTransform.position.x, transform.position.y, transform.position.z);
+        transform.position = pos;
     }
 
-    public void MoveToNewRoom(Transform _newRoom)
-    {
-      currentPosX = _newRoom.position.x;
-    }
 }
