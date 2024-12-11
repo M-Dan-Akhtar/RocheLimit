@@ -15,7 +15,7 @@ public class Teleporter : MonoBehaviour
 
     private GameObject clouds;
     private GameObject dust;
-    private bool toggleTimeLineClouds = false;
+    private bool toggleTimeLineClouds = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,6 @@ public class Teleporter : MonoBehaviour
         alternateStart = GameObject.Find("AlternateTimelineStart").transform;
         clouds = GameObject.Find("Clouds");
         dust = GameObject.Find("Dust");
-        toggleClouds();
 
         previousLocation = new Vector3(alternateStart.position.x, alternateStart.position.y, alternateStart.position.z);
         previousCamera = new Vector3(alternateStart.position.x, camera.transform.position.y + 100.0f, camera.transform.position.z);
@@ -43,7 +42,7 @@ public class Teleporter : MonoBehaviour
             player.GetComponent<SpriteRenderer>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
-            StartCoroutine(WaitAndTeleport(1));            
+            StartCoroutine(WaitAndTeleport(0.33f));            
 
         }
         
@@ -55,7 +54,7 @@ public class Teleporter : MonoBehaviour
       toggleTimeLineClouds = !toggleTimeLineClouds;
     }
 
-    IEnumerator WaitAndTeleport(int s)
+    IEnumerator WaitAndTeleport(float s)
     {       
         Vector3 currentLocation = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         Vector3 currentCamera = new Vector3(camera.transform.position.x, camera.transform.position.y, camera.transform.position.z);
