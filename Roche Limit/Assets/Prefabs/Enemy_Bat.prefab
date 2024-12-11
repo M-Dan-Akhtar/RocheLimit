@@ -155,4 +155,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7162cdd136f64040a89b9342b74cbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 75bb56570ed94664cac2302125bc4d39, type: 3}
   damage: 1
