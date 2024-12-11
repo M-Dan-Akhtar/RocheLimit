@@ -7,7 +7,8 @@ public class exitDoor : MonoBehaviour
 {
     [SerializeField]private Color lockedColor = Color.red;
     [SerializeField]private Color unlockedColor = Color.green;
-
+    [SerializeField] private AudioClip doorOpenSound;
+    [SerializeField] private AudioClip unlockSound;
     private bool isPlayerNearby = false;
 
     public bool locked = true;
@@ -22,6 +23,7 @@ public class exitDoor : MonoBehaviour
     {
        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && locked == false)
         {
+            SoundManger.instance.PlaySound(doorOpenSound);
             ChangeLevel.finishedLevel = SceneManager.GetActiveScene().name;
            // holds the name of the level you just beat
             ChangeLevel.finishedLevel = SceneManager.GetActiveScene().name;
@@ -38,8 +40,8 @@ public class exitDoor : MonoBehaviour
       {
         locked = false;
       }
-
-      SpriteRenderer doorRenderer = GetComponent<SpriteRenderer>();
+        SoundManger.instance.PlaySound(unlockSound);
+        SpriteRenderer doorRenderer = GetComponent<SpriteRenderer>();
       doorRenderer.color = unlockedColor;
     }
 
