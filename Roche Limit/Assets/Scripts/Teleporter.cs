@@ -17,6 +17,8 @@ public class Teleporter : MonoBehaviour
     private GameObject dust;
     private bool toggleTimeLineClouds = true;
 
+    [SerializeField] private AudioClip teleportSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class Teleporter : MonoBehaviour
             player.GetComponent<SpriteRenderer>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
-            StartCoroutine(WaitAndTeleport(0.33f));            
+            StartCoroutine(WaitAndTeleport(0.5f));            
 
         }
         
@@ -59,6 +61,8 @@ public class Teleporter : MonoBehaviour
         Vector3 currentLocation = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         Vector3 currentCamera = new Vector3(camera.transform.position.x, camera.transform.position.y, camera.transform.position.z);
         Vector3 currentFacing = new Vector3(player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
+
+        SoundManger.instance.PlaySound(teleportSound);
 
         toggleClouds();
         player.transform.position = previousLocation;
