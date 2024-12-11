@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
    
     [SerializeField]private float speed = 5;
+    [SerializeField]private float jumpSpeed = 8;
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-      body.velocity = new Vector2(body.velocity.x, speed);
+      body.velocity = new Vector2(body.velocity.x, jumpSpeed);
       grounded = false;
       anim.SetTrigger("jump");
     }

@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     public Text timerText;
-    public float timerValue = 0.0f;
+    public static float timerValue = 0.0f;
     public float twoStar = 60.0f;
     public float oneStar = 120.0f;
+
+    private static bool gameOver = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,15 @@ public class TimerController : MonoBehaviour
         timerText.GetComponent<Text>().color = Color.green;
     }
 
+    public static void toggleTimer(){
+      gameOver = !gameOver;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
-        
+      if(gameOver) return;
+
         timerValue += Time.deltaTime;
         int minutes = Mathf.FloorToInt(timerValue / 60f);
 	    int seconds = Mathf.FloorToInt(timerValue % 60f);

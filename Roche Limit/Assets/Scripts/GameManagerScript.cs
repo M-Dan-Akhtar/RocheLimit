@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
@@ -20,5 +21,6 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        TimerController.toggleTimer();
     }
 }

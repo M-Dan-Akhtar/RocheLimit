@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ChangeLevel : MonoBehaviour
 {
     public string insertedLevelName;
+    public Text scoreField;
    public static string finishedLevel; //using this for scene switching (saves the name of the completed level)
     
     // void OnTriggerEnter2D(Collider2D winFlag)
@@ -23,6 +25,14 @@ public class ChangeLevel : MonoBehaviour
             
     //     }
     // }
+      public void Start(){
+        if(scoreField != null){
+          scoreField.text = "Score(Time): " + TimerController.timerValue.ToString("F2");
+        }
+      }
+        public void Awake(){
+          
+        }
        public void NextScene(){
         if(finishedLevel.Equals("Level1")){
             Debug.Log("Previously completed level was Level 1. So, loading level 2");

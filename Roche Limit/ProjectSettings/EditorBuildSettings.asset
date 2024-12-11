@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/MoTestScene.unity
+    path: Assets/Scenes/WIP/MoTestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b8a696cb234f18340b4222fe5fa7377a
   - enabled: 1
-    path: Assets/Scenes/AlkutTestScene.unity
+    path: Assets/Scenes/WIP/AlkutTestScene.unity
     guid: 71778804b271b02438c258fa6cc7c147
   - enabled: 1
-    path: Assets/Scenes/SpriteCheckScene1.unity
+    path: Assets/Scenes/WIP/SpriteCheckScene1.unity
     guid: b885d202af091c442be45c70aef4833c
   - enabled: 1
     path: Assets/Scenes/Level1.unity
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScreen.unity
     guid: 1f7b858035b30c04694a0f7c2327b429
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/WIP/Level2_old.unity
     guid: a3631aaba5cb4a44ba955bb4e92103e0
   - enabled: 1
     path: Assets/Scenes/SelectLevelScreen.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SimpleLevel.unity
     guid: d0b332105286cb945862cd5a52b02b8e
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: e054ea08d4a5f2a48a1f57d0a305b85a
   m_configObjects: {}

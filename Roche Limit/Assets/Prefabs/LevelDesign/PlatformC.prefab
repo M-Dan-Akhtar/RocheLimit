@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004831811147022289}
   - component: {fileID: 6774078723568089468}
-  - component: {fileID: 6679968381985046313}
+  - component: {fileID: 7763790540207694316}
   m_Layer: 0
   m_Name: PlatformC
   m_TagString: Ground
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1455319799
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4476725be7acbaa468eea6de381bd914, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6679968381985046313
-BoxCollider2D:
+--- !u!70 &7763790540207694316
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7687020768426289851}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2dd5776f4ad1de947bee7089830f88ca, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -117,16 +117,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0007457733, y: -0.0755415}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.36, y: 0.67}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.372978, y: 0.5304432}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.36, y: 0.67}
+  m_Direction: 1
