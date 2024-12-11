@@ -7,10 +7,15 @@ public class MainMenuScript : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("AlkutTestScene");
+        SceneManager.LoadScene("Level1");
     }
     public void QuitButton()
     {
         Application.Quit();
     }
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
+

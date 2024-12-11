@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public GameManagerScript gameManager;
+
+    [SerializeField] private AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,10 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
         {
+            SoundManger.instance.PlaySound(deathSound);
             isDead = true;
             gameManager.gameOver();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
     }
