@@ -99,4 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedColor: {r: 1, g: 0, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0, a: 1}
+  doorOpenSound: {fileID: 8300000, guid: f49ec9b0cac068f42bb88dcf4bc2f581, type: 3}
+  unlockSound: {fileID: 8300000, guid: 928fcad060f461047af355d77f663a13, type: 3}
   locked: 1

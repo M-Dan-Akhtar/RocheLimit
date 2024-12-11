@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
     [SerializeField] private TrailRenderer tr;
+
+
+    //Sounds
+    [SerializeField] private AudioClip jumpingSound;
+    [SerializeField] private AudioClip dashingSound;
     private void Awake()
     {
       body = GetComponent<Rigidbody2D> ();
@@ -48,10 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
       if(Input.GetKey(KeyCode.Space) && grounded)
       {
-        Jump();
+            SoundManger.instance.PlaySound(jumpingSound);
+            Jump();
       }
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
+            SoundManger.instance.PlaySound(dashingSound);
             StartCoroutine(Dash());
         }
 
