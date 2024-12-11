@@ -177,7 +177,7 @@ MonoBehaviour:
   speed: 5
   jumpSpeed: 8
   tr: {fileID: 905173168597801788}
-  jumpingSound: {fileID: 8300000, guid: 48f10331c3dcdbd47ad2baec8811fbcf, type: 3}
+  jumpingSound: {fileID: 8300000, guid: dc41f90f789c08248ad0a457c262bbc6, type: 3}
   dashingSound: {fileID: 8300000, guid: dc9899098c268974ab254e0bbfb8807a, type: 3}
 --- !u!95 &4271695142369830493
 Animator:
