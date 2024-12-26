@@ -16,17 +16,18 @@ Utilize time travel to teleport between the future and the past, solving intrica
 ## Screenshots
 
 ### Main Menu
-![Main Menu](https://ibb.co/KwR7WSK)
+<img src="https://i.ibb.co/WtqFfjV/Screenshot-2024-12-26-161401.png" alt="Screenshot-2024-12-26-161401" border="0">
 
 ### Gameplay
-![Gameplay](https://ibb.co/vc1wCCC)
+<img src="https://i.ibb.co/7SvYxxx/Screenshot-2024-12-26-161422.png" alt="Screenshot-2024-12-26-161422" border="0">
 
 ### Win Screen
-![Win Screen](https://ibb.co/NYJtTcq)
+<img src="https://i.ibb.co/vzTVX0W/Screenshot-2024-12-26-161439.png" alt="Screenshot-2024-12-26-161439" border="0">
+
 
 ## Installation
 
-N/A/
+N/A
 
 ## License
 
