@@ -13,6 +13,13 @@ Utilize time travel to teleport between the future and the past, solving intrica
 - Engaging storyline set in a dystopian world
 - Unique platforming challenges that evolve as you progress through time
 
+
+## What I learned
+* Using git to collaborate with team
+* Solving an issue locally is a lot easier than dealing with as a git merge conflict
+* Organizing roles/priorties among team members
+* Clear communication and requirements among the team
+
 ## Screenshots
 
 ### Main Menu
